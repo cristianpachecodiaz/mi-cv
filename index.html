@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Cristian Pacheco</title>
+    <title>CV Cristian Pacheco - Senior Java Developer</title>
     <style>
         @page {
             size: A4;
@@ -19,8 +19,8 @@
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
             font-size: 10pt;
-            line-height: 1.3;
-            color: #333;
+            line-height: 1.35;
+            color: #2c3e50;
             background: #f5f5f5;
             margin: 0;
             padding: 20px;
@@ -51,6 +51,7 @@
             font-weight: bold;
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
         }
         
         .print-btn:hover {
@@ -61,109 +62,150 @@
         header {
             text-align: center;
             padding-bottom: 10pt;
-            margin-bottom: 12pt;
+            margin-bottom: 10pt;
             border-bottom: 3pt solid #667eea;
         }
         
         h1 {
-            font-size: 24pt;
-            color: #667eea;
-            margin-bottom: 6pt;
+            font-size: 26pt;
+            color: #2c3e50;
+            margin-bottom: 4pt;
+            font-weight: 700;
         }
         
         .subtitle {
-            font-size: 11pt;
-            color: #666;
+            font-size: 12pt;
+            color: #667eea;
             margin-bottom: 6pt;
+            font-weight: 600;
         }
         
         .contact {
-            font-size: 10pt;
+            font-size: 9.5pt;
             color: #555;
         }
         
         h2 {
-            font-size: 14pt;
-            color: #667eea;
-            margin-top: 12pt;
-            margin-bottom: 8pt;
+            font-size: 13pt;
+            color: #2c3e50;
+            margin-top: 11pt;
+            margin-bottom: 7pt;
             padding-bottom: 3pt;
-            border-bottom: 2pt solid #764ba2;
+            border-bottom: 2pt solid #667eea;
+            font-weight: 600;
         }
         
         .section {
+            margin-bottom: 9pt;
+        }
+        
+        .summary {
+            background: #f8f9ff;
+            padding: 8pt;
+            border-left: 4pt solid #667eea;
+            margin-bottom: 10pt;
+            font-size: 9.5pt;
+            line-height: 1.4;
+        }
+        
+        .summary strong {
+            color: #667eea;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8pt;
             margin-bottom: 10pt;
         }
         
-        .objective {
-            font-style: italic;
-            color: #555;
-            margin-bottom: 10pt;
-        }
-        
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6pt;
-            margin-bottom: 10pt;
-        }
-        
-        .skill {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4pt 10pt;
+        .skill-category {
+            background: #f8f9ff;
+            padding: 6pt 8pt;
             border-radius: 4pt;
+            border-left: 3pt solid #764ba2;
+        }
+        
+        .skill-category-title {
+            font-weight: 600;
+            color: #667eea;
+            font-size: 9.5pt;
+            margin-bottom: 3pt;
+        }
+        
+        .skill-list {
             font-size: 9pt;
+            color: #555;
+            line-height: 1.3;
         }
         
         .job {
             margin-bottom: 10pt;
+            page-break-inside: avoid;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 3pt;
         }
         
         .job-title {
             font-size: 11pt;
-            font-weight: bold;
-            color: #667eea;
-        }
-        
-        .company {
-            font-size: 10pt;
-            color: #764ba2;
-            margin-top: 2pt;
+            font-weight: 700;
+            color: #2c3e50;
         }
         
         .date {
             font-size: 9pt;
             color: #999;
-            margin-top: 2pt;
+            font-style: italic;
+        }
+        
+        .company {
+            font-size: 10pt;
+            color: #667eea;
+            font-weight: 600;
             margin-bottom: 4pt;
         }
         
-        .description {
+        .achievement {
             font-size: 9.5pt;
             color: #555;
-            margin-bottom: 4pt;
+            margin-bottom: 2pt;
+            padding-left: 12pt;
+            position: relative;
+        }
+        
+        .achievement:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #764ba2;
+            font-weight: bold;
         }
         
         .tags {
             display: flex;
             flex-wrap: wrap;
             gap: 4pt;
-            margin-top: 4pt;
+            margin-top: 5pt;
         }
         
         .tag {
             background: #e8eaf6;
-            color: #667eea;
-            padding: 2pt 6pt;
+            color: #5e35b1;
+            padding: 2pt 7pt;
             border-radius: 3pt;
             font-size: 8pt;
+            font-weight: 500;
         }
         
-        .education {
+        .education-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 8pt;
+            gap: 6pt;
         }
         
         .edu {
@@ -171,17 +213,24 @@
             padding: 6pt;
             border-radius: 4pt;
             font-size: 8.5pt;
+            border-left: 2pt solid #764ba2;
         }
         
         .edu-title {
-            font-weight: bold;
-            color: #667eea;
+            font-weight: 600;
+            color: #2c3e50;
             margin-bottom: 2pt;
+            font-size: 9pt;
         }
         
         .edu-inst {
-            color: #764ba2;
+            color: #667eea;
             font-size: 8pt;
+        }
+        
+        .highlight {
+            color: #667eea;
+            font-weight: 600;
         }
         
         @media print {
@@ -221,7 +270,7 @@
                 page-break-inside: avoid;
             }
             
-            .skill, .tag {
+            .skill-category, .tag, .edu, .summary {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
@@ -234,137 +283,194 @@
                 padding: 10mm;
             }
             
-            .education {
+            .skills-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
     </style>
 </head>
 <body>
+    <div class="no-print">
+        <button class="print-btn" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+    </div>
+
     <div class="page">
         <header>
-            <h1>Cristian Pacheco</h1>
-            <div class="subtitle">Ingeniero en Informática | Desarrollador Java | Gestor de Proyectos TI</div>
-            <div class="contact">📞 979582158 | ✉️ cristianpachecod@gmail.com</div>
+            <h1>CRISTIAN PACHECO DIAZ</h1>
+            <div class="subtitle">Senior Java Developer | 4 años desarrollo + 16 años análisis/gestión TI</div>
+            <div class="contact">📞 +56 9 7958 2158 | ✉️ cristianpachecod@gmail.com</div>
         </header>
         
         <div class="section">
-            <h2>Objetivo Profesional</h2>
-            <p class="objective">
-                Busco aplicar mis 20 años de experiencia como Ingeniero en Informática, desarrollador Java, 
-                analista de sistemas TI y gestor de proyectos TI para contribuir al éxito de proyectos 
-                desafiantes y continuar mi desarrollo profesional en un entorno dinámico.
-            </p>
-        </div>
-        
-        <div class="section">
-            <h2>Habilidades Técnicas</h2>
-            <div class="skills">
-                <span class="skill">HTML - Avanzado</span>
-                <span class="skill">Java - Avanzado</span>
-                <span class="skill">CSS3 - Avanzado</span>
-                <span class="skill">Spring - Avanzado</span>
-                <span class="skill">React - Intermedio</span>
-                <span class="skill">Agile/Scrum</span>
-                <span class="skill">JIRA</span>
-                <span class="skill">WebSphere Portal</span>
+            <h2>PERFIL PROFESIONAL</h2>
+            <div class="summary">
+                Ingeniero en Computación con <strong>4 años de experiencia en desarrollo Java</strong> y <strong>16 años en análisis de sistemas y gestión de proyectos TI</strong>, especializado en <strong>WebSphere Portal, Spring Framework y arquitecturas empresariales</strong>. Actualmente en <strong>especialización avanzada en IA Generativa, LLM Apps y Agentes IA</strong>, dominando herramientas de desarrollo asistido por IA (Cursor AI, Claude Code). Experiencia comprobada en implementación de soluciones para instituciones financieras líderes (Banco Itaú, Mutual de Seguridad). Experto en <strong>integración continua con IBM RTC</strong>, gestión de despliegues multi-ambiente y desarrollo bajo metodologías ágiles. Perfil versátil que combina sólidas habilidades técnicas de desarrollo con amplia experiencia en gestión de proyectos, visión estratégica de negocio y adopción de tecnologías emergentes de IA.
             </div>
         </div>
         
         <div class="section">
-            <h2>Experiencia Laboral</h2>
+            <h2>COMPETENCIAS TÉCNICAS</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-category-title">Lenguajes & Frameworks</div>
+                    <div class="skill-list">Java 8/11 • Spring Framework • Spring Boot • Spring MVC • HTML5 • CSS3 • JavaScript • React • TypeScript</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">IA Generativa & Desarrollo Asistido</div>
+                    <div class="skill-list">LLM Apps • RAG • Agentes IA • Cursor AI • Claude Code • Firebase • LLMOps • Desarrollo Conversacional</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">Plataformas Empresariales</div>
+                    <div class="skill-list">WebSphere Portal 8.5/9 • WebSphere Application Server • IBM WCM • Portlets JSR-286</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">Integración & APIs</div>
+                    <div class="skill-list">APIs REST • Microservicios • SOAP Web Services • Postman • JSON/XML</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">DevOps & Herramientas</div>
+                    <div class="skill-list">IBM RTC (CI/CD) • Git • Maven • JIRA • Agile/Scrum • Gestión multi-ambiente (DEV/QA/PROD)</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>EXPERIENCIA PROFESIONAL</h2>
             
             <div class="job">
-                <div class="job-title">Desarrollador Portal IBM</div>
-                <div class="company">Genesys - Banco Itaú</div>
-                <div class="date">Febrero 2023 - Marzo 2025</div>
-                <div class="description">
-                    Desarrollador en Comunidad Protección del Banco Itaú y Célula Evolutivos de Mutual de Seguridad. 
-                    Análisis de requerimientos funcionales y técnicos. Implementación Sitio Seguro Auto Itaú y 
-                    Nuevo Sitio Público Mutual de Seguridad.
+                <div class="job-header">
+                    <div class="job-title">Especialización en IA Generativa & Desarrollo Asistido por IA</div>
+                    <div class="date">Nov 2025 - En Curso</div>
                 </div>
+                <div class="company">Capacitación Continua - Udemy & Platzi</div>
+                <div class="achievement">Bootcamp completo en <span class="highlight">IA Generativa, LLM Apps y Agentes IA</span>: construcción de aplicaciones RAG avanzadas, aplicaciones multimodales y sistemas multi-agente con LLMOps</div>
+                <div class="achievement">Dominio de <span class="highlight">AI Coding Assistants</span>: Cursor AI, Claude AI, v0, o1, Replit Agent - desarrollo de aplicaciones completas sin programación tradicional</div>
+                <div class="achievement">Especialización en <span class="highlight">Claude Code</span>: desarrollo conversacional con IA, análisis de código, diseño de features y ejecución de pruebas desde terminal</div>
+                <div class="achievement">Integración de herramientas modernas: Firebase, Replicate AI, Stable Fusion, Deepgram para backends simplificados</div>
+                <div class="achievement">Estrategia empresarial de IA: identificación de oportunidades, diseño de planes de implementación y formación de equipos IA</div>
+                <div class="tags">
+                    <span class="tag">IA Generativa</span>
+                    <span class="tag">LLM Apps</span>
+                    <span class="tag">RAG</span>
+                    <span class="tag">Agentes IA</span>
+                    <span class="tag">Cursor AI</span>
+                    <span class="tag">Claude Code</span>
+                    <span class="tag">Firebase</span>
+                    <span class="tag">LLMOps</span>
+                </div>
+            </div>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Desarrollador Java Senior - Portal IBM WebSphere</div>
+                    <div class="date">Feb 2023 - Oct 2025</div>
+                </div>
+                <div class="company">Genesys | Cliente: Banco Itaú</div>
+                <div class="achievement">Desarrollo y evolución del ecosistema de portales corporativos para <span class="highlight">Banco Itaú</span> (Comunidad Protección) y <span class="highlight">Mutual de Seguridad</span> bajo metodologías ágiles (Scrum)</div>
+                <div class="achievement">Implementación completa del <span class="highlight">Sitio Seguro Auto Itaú</span>: análisis de requerimientos técnicos/funcionales, desarrollo de portlets JSR-286, integración con APIs REST y despliegue en WebSphere Portal 9</div>
+                <div class="achievement">Lideré la migración y desarrollo del <span class="highlight">Nuevo Sitio Público Mutual de Seguridad</span>, incluyendo componentes WCM, formularios interactivos y servicios de backend</div>
+                <div class="achievement">Gestión de ciclo completo de desarrollo utilizando <span class="highlight">IBM RTC</span> para control de versiones, builds automatizados e integración continua entre ambientes</div>
+                <div class="achievement">Colaboración estrecha con equipos multidisciplinarios (UX, QA, Arquitectura) para garantizar soluciones de alta calidad y cumplimiento de estándares corporativos</div>
                 <div class="tags">
                     <span class="tag">Java 8</span>
-                    <span class="tag">HTML/CSS/JS</span>
-                    <span class="tag">APIs REST</span>
                     <span class="tag">WebSphere Portal 8.5/9</span>
+                    <span class="tag">HTML5/CSS3/JavaScript</span>
+                    <span class="tag">APIs REST</span>
                     <span class="tag">WCM</span>
+                    <span class="tag">IBM RTC</span>
                     <span class="tag">JIRA</span>
-                    <span class="tag">Agile</span>
+                    <span class="tag">Agile/Scrum</span>
                 </div>
             </div>
             
             <div class="job">
-                <div class="job-title">Desarrollador Portal IBM</div>
-                <div class="company">Xinerlink - Banco Itaú</div>
-                <div class="date">Enero 2021 - Diciembre 2022</div>
-                <div class="description">
-                    Participación en células del Banco Itaú: Nuevas funcionalidades, Onboarding Hipotecario, 
-                    Alto Valor. Generación de soluciones en tecnología Portal IBM.
+                <div class="job-header">
+                    <div class="job-title">Desarrollador Java - Portal IBM WebSphere</div>
+                    <div class="date">Ene 2021 - Dic 2022</div>
                 </div>
+                <div class="company">Xinerlink | Cliente: Banco Itaú</div>
+                <div class="achievement">Desarrollo de funcionalidades críticas en múltiples células del Banco Itaú: <span class="highlight">Nuevas Funcionalidades, Onboarding Hipotecario y Alto Valor</span></div>
+                <div class="achievement">Implementación de soluciones Java en WebSphere Portal con integración a microservicios y APIs corporativas</div>
+                <div class="achievement">Optimización de componentes existentes mejorando tiempos de respuesta y experiencia de usuario en plataformas transaccionales</div>
+                <div class="achievement">Gestión de despliegues con IBM RTC y validación de calidad con Postman para pruebas de integración</div>
                 <div class="tags">
                     <span class="tag">Java 8</span>
-                    <span class="tag">IBM Portal</span>
+                    <span class="tag">IBM WebSphere Portal</span>
                     <span class="tag">Microservicios</span>
-                    <span class="tag">RTC</span>
+                    <span class="tag">APIs REST</span>
+                    <span class="tag">IBM RTC</span>
                     <span class="tag">Postman</span>
                 </div>
             </div>
             
             <div class="job">
-                <div class="job-title">Desarrollador Freelance</div>
-                <div class="company">Exportadora Frutícola Río Duero</div>
-                <div class="date">Septiembre 2020 - Diciembre 2020</div>
-                <div class="description">
-                    Desarrollo aplicación WEB MVC con Spring Framework para gestión de usuarios/roles y reportes del negocio.
+                <div class="job-header">
+                    <div class="job-title">Desarrollador Full Stack Freelance</div>
+                    <div class="date">Sep 2020 - Dic 2020</div>
                 </div>
+                <div class="company">Exportadora Frutícola Río Duero</div>
+                <div class="achievement">Diseño y desarrollo de aplicación web empresarial MVC con <span class="highlight">Spring Framework</span> para gestión integral de usuarios, roles y reportes de negocio</div>
+                <div class="achievement">Arquitectura en capas (presentación, negocio, datos) con Spring MVC, Spring Security y Spring Data JPA</div>
                 <div class="tags">
                     <span class="tag">Spring Framework</span>
-                    <span class="tag">MVC</span>
+                    <span class="tag">Spring MVC</span>
                     <span class="tag">Java</span>
+                    <span class="tag">MySQL</span>
                 </div>
             </div>
             
             <div class="job">
-                <div class="job-title">Gestor de Proyectos TI</div>
-                <div class="company">Agrosuper</div>
-                <div class="date">Enero 2011 - Octubre 2018</div>
-                <div class="description">
-                    Responsable de desarrollo de proyectos bajo estándares metodológicos TI. Diseño funcional, 
-                    planificación, presupuesto y gestión de recursos humanos. Implementación metodologías ágiles. 
-                    Proyectos: Contact Center IP, eCommerce Agrosuper, Upgrade CTI Genesys 8.5.
+                <div class="job-header">
+                    <div class="job-title">Gestor de Proyectos TI & Analista de Sistemas</div>
+                    <div class="date">Ene 2003 - Oct 2018</div>
                 </div>
+                <div class="company">Agrosuper S.A.</div>
+                <div class="achievement">Lider técnico de implementación de <span class="highlight">Contact Center IP Genesys</span> y <span class="highlight">plataforma eCommerce corporativa</span>, equipos multidisciplinarios y cronogramas bajo metodologías ágiles</div>
+                <div class="achievement">Gestor técnico de proyectos críticos: <span class="highlight">SAP CRM, Intranet Corporativa (Intrasuper), DMAPAS</span> - desde diseño funcional hasta paso a producción</div>
+                <div class="achievement">Implementación de metodologías Agile/Scrum en equipos de desarrollo, mejorando tiempos de entrega y calidad de software</div>
+                <div class="achievement">Responsable de mantenimiento evolutivo y correctivo de sistemas críticos con alta disponibilidad</div>
                 <div class="tags">
                     <span class="tag">Gestión Proyectos</span>
-                    <span class="tag">Agile</span>
-                    <span class="tag">Scrum</span>
-                    <span class="tag">Liderazgo</span>
-                </div>
-            </div>
-            
-            <div class="job">
-                <div class="job-title">Analista de Sistemas TI</div>
-                <div class="company">Agrosuper</div>
-                <div class="date">Enero 2003 - Diciembre 2018</div>
-                <div class="description">
-                    Gestión de proyectos: diseño técnico, construcción, testing y paso a producción. 
-                    Proyectos: Intrasuper, DMAPAS, CRM SAP, mantenciones sistemas críticos.
-                </div>
-                <div class="tags">
                     <span class="tag">SAP CRM</span>
-                    <span class="tag">Testing</span>
-                    <span class="tag">Análisis Sistemas</span>
+                    <span class="tag">Agile/Scrum</span>
+                    <span class="tag">Liderazgo Técnico</span>
+                    <span class="tag">Análisis de Sistemas</span>
                 </div>
             </div>
         </div>
         
         <div class="section">
-            <h2>Formación y Certificaciones</h2>
-            <div class="education">
+            <h2>FORMACIÓN ACADÉMICA & CERTIFICACIONES</h2>
+            <div class="education-grid">
                 <div class="edu">
-                    <div class="edu-title">Ing. Computación</div>
-                    <div class="edu-inst">U. Católica Maule</div>
-                    <div style="font-size: 7.5pt; color: #999;">1995-2000</div>
+                    <div class="edu-title">Ingeniería en Computación</div>
+                    <div class="edu-inst">Universidad Católica del Maule</div>
+                    <div style="font-size: 7.5pt; color: #999; margin-top: 2pt;">1995-2000</div>
+                </div>
+                <div class="edu">
+                    <div class="edu-title">Full Stack Java Developer</div>
+                    <div class="edu-inst">Awakelab - 2020</div>
+                </div>
+                <div class="edu">
+                    <div class="edu-title">SCRUM Foundations Professional</div>
+                    <div class="edu-inst">CertiProf - 2020</div>
+                </div>
+                <div class="edu">
+                    <div class="edu-title">Bootcamp IA Generativa & LLM</div>
+                    <div class="edu-inst">Udemy - 2025 (En curso)</div>
+                </div>
+                <div class="edu">
+                    <div class="edu-title">Claude Code Specialist</div>
+                    <div class="edu-inst">Platzi - 2025 (En curso)</div>
                 </div>
                 <div class="edu">
                     <div class="edu-title">Desarrollo con IA</div>
@@ -372,42 +478,34 @@
                 </div>
                 <div class="edu">
                     <div class="edu-title">React Esencial</div>
-                    <div class="edu-inst">LinkedIn - 2024</div>
+                    <div class="edu-inst">LinkedIn Learning - 2024</div>
                 </div>
                 <div class="edu">
                     <div class="edu-title">TypeScript Esencial</div>
-                    <div class="edu-inst">LinkedIn - 2024</div>
-                </div>
-                <div class="edu">
-                    <div class="edu-title">Full Stack Java</div>
-                    <div class="edu-inst">Awakelab - 2020</div>
-                </div>
-                <div class="edu">
-                    <div class="edu-title">SCRUM Foundations</div>
-                    <div class="edu-inst">CertiProf - 2020</div>
+                    <div class="edu-inst">LinkedIn Learning - 2024</div>
                 </div>
                 <div class="edu">
                     <div class="edu-title">Gestión Contenidos M201</div>
                     <div class="edu-inst">Modyo - 2022</div>
                 </div>
                 <div class="edu">
-                    <div class="edu-title">HTML5+CSS</div>
+                    <div class="edu-title">HTML5 + CSS3 Avanzado</div>
                     <div class="edu-inst">SENCE - 2020</div>
                 </div>
                 <div class="edu">
-                    <div class="edu-title">JavaScript</div>
+                    <div class="edu-title">JavaScript Moderno</div>
                     <div class="edu-inst">SENCE - 2020</div>
                 </div>
                 <div class="edu">
-                    <div class="edu-title">Gestión Proyectos</div>
+                    <div class="edu-title">Gestión de Proyectos</div>
                     <div class="edu-inst">PUC - 2017</div>
                 </div>
                 <div class="edu">
-                    <div class="edu-title">SAP SD</div>
+                    <div class="edu-title">SAP SD Consultor</div>
                     <div class="edu-inst">CVOSOFT - 2016</div>
                 </div>
                 <div class="edu">
-                    <div class="edu-title">Liderazgo</div>
+                    <div class="edu-title">Liderazgo & Gestión</div>
                     <div class="edu-inst">2015</div>
                 </div>
             </div>
